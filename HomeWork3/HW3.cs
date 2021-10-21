@@ -267,10 +267,13 @@ namespace HomeWork3
                 if (left < right)
                 {
                     mid = (left + right) / 2;
+                  
                     if (Math.Pow(mid, 3) > N)
-                    { right = mid; }
+                    { right = mid;
+                    }
                     else if (Math.Pow(mid, 3) < N)
-                    { left = mid; }
+                    { left = mid;
+                    }
                 }
                 else if (left > right)
                 {
@@ -283,6 +286,7 @@ namespace HomeWork3
 
         public int SearchesForTheNumberOfOddDigits(int n)
         {
+            string result = "";
             int count = 0;
             int tmp = 0;
             while (n > 0)
@@ -335,7 +339,7 @@ namespace HomeWork3
                 }
                 if (srav != 0)
                 {
-                    str = " yes";
+                    str = "yes";
                     return str;
                 }
                 else

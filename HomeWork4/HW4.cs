@@ -96,6 +96,10 @@ namespace HomeWork4
         public int SearchesForTheMinElementOfAnArray(int[] array)
         {
             int minItem = array[0];
+            if(array.Length == 0)
+            {
+                throw new IndexOutOfRangeException("ну как так-то");
+            }
 
             for (int i = 0; i < array.Length; i++)
             {
@@ -110,6 +114,10 @@ namespace HomeWork4
         public int SearchesForTheMaxElementOfAnArray(int[] array)
         {
             int maxItem = array[0];
+            if (array.Length == 0)
+            {
+                throw new IndexOutOfRangeException("ну как так-то");
+            }
 
             for (int i = 0; i < array.Length; i++)
             {

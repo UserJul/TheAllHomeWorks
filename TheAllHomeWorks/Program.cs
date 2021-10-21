@@ -30,7 +30,7 @@ namespace TheAllHomeWorks
             //hw2.SolveTask5();
 
             //hw3.SolveTask1();
-            hw3.SolveTask2();
+            //hw3.SolveTask2();
             //hw3.SolveTask3();
             //hw3.SolveTask4();
             //hw3.SolveTask5();
@@ -39,7 +39,7 @@ namespace TheAllHomeWorks
             //hw3.SolveTask8();
             //hw3.SolveTask9();
             //hw3.SolveTask10();
-            //hw3.SolveTask11();
+            hw3.SolveTask11();
             //hw3.SolveTask12();
 
             //hw4.SolveTask1();

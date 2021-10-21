@@ -81,5 +81,38 @@ namespace HomeWork3.Tests
             string actual = _hw3.SearchesForNODViaEuclidTheorem(a, b);
             Assert.AreEqual(expected, actual);
         }
+        [TestCase(2, 2)]
+        public void CountsByHalfDivisionTest(int n, int expected)
+        {
+            int actual = _hw3.CountsByHalfDivision(n);
+            Assert.AreEqual(expected, actual);
+        }
+        [TestCase(2, 0)]
+        [TestCase(121, 2)]
+        public void SearchesForTheNumberOfOddDigitsTest(int n, int expected)
+        {
+            int actual = _hw3.SearchesForTheNumberOfOddDigits(n);
+            Assert.AreEqual(expected, actual);
+        }
+        [TestCase(123, 321)]
+        public void ReversNumberTest(int n, int expected)
+        {
+            int actual = _hw3.ReversNumber(n);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(10, 2, 4, 6, 8)]
+        public void FindSumChetMoreThenSumNechetTest(int n, int expected)
+        {
+            int actual = _hw3.FindSumChetMoreThenSumNechet(n);
+            Assert.AreEqual(expected, actual);
+        }
+        [TestCase(2, 12, "yes")]
+        [TestCase(123, 456, "no")]
+        public void LookingForTheSameNumbersTest(int a, int b, string expected)
+        {
+            string actual = _hw3.LookingForTheSameNumbers(a, b);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
