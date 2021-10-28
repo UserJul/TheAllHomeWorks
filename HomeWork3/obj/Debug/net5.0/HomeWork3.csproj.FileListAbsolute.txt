@@ -9,3 +9,4 @@ C:\Users\checove\source\repos\TheAllHomeWorks\HomeWork3\obj\Debug\net5.0\HomeWor
 C:\Users\checove\source\repos\TheAllHomeWorks\HomeWork3\obj\Debug\net5.0\HomeWork3.dll
 C:\Users\checove\source\repos\TheAllHomeWorks\HomeWork3\obj\Debug\net5.0\ref\HomeWork3.dll
 C:\Users\checove\source\repos\TheAllHomeWorks\HomeWork3\obj\Debug\net5.0\HomeWork3.pdb
+C:\Users\checove\source\repos\TheAllHomeWorks\HomeWork3\obj\Debug\net5.0\HomeWork3.csproj.AssemblyReference.cache

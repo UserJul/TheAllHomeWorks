@@ -78,7 +78,8 @@ namespace HomeWork3
         public void SolveTask11()
         {
             int n = GetNumberForUser("Введите число N");
-            int sum = FindSumChetMoreThenSumNechet(n);
+            int[] sum = FindSumChetMoreThenSumNechet(n);
+
         }
         public void SolveTask12()
         {
@@ -354,12 +355,13 @@ namespace HomeWork3
                 return str;
             }
         }
-        public int FindSumChetMoreThenSumNechet(int n)
+        public int[] FindSumChetMoreThenSumNechet(int n)
         {
             int sumChet = 0;
             int sumNechet = 0;
             int tmp1 = 0;
             int tmp2 = 0;
+            int counter = 0;
             for (int i = 1; i <= n; i++)
             {
                 tmp2 = i;
@@ -378,7 +380,7 @@ namespace HomeWork3
                 }
                 if (sumChet > sumNechet)
                 {
-                    Console.WriteLine(i);
+                    counter++;
                     sumChet = 0;
                     sumNechet = 0;
                 }
@@ -388,7 +390,41 @@ namespace HomeWork3
                     sumNechet = 0;
                 }
             }
-            return tmp2;
+            int[] result = new int[counter];
+            sumChet = 0;
+            sumNechet = 0;
+            tmp1 = 0;
+            tmp2 = 0;
+            for (int i = 1, k = 0; i <= n; i++)
+            {
+                tmp2 = i;
+                while (tmp2 > 0)
+                {
+                    tmp1 = tmp2 % 10;
+                    if (tmp1 % 2 == 0)
+                    {
+                        sumChet += tmp1;
+                    }
+                    else
+                    {
+                        sumNechet += tmp1;
+                    }
+                    tmp2 = tmp2 / 10;
+                }
+                if (sumChet > sumNechet)
+                {
+                    result[k] = i;
+                    k++;
+                    sumChet = 0;
+                    sumNechet = 0;
+                }
+                else
+                {
+                    sumChet = 0;
+                    sumNechet = 0;
+                }
+            }
+            return result;
         }
     }
 }

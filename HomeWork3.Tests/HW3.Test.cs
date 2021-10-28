@@ -101,10 +101,10 @@ namespace HomeWork3.Tests
             Assert.AreEqual(expected, actual);
         }
 
-        [TestCase(10, 2, 4, 6, 8)]
-        public void FindSumChetMoreThenSumNechetTest(int n, int expected)
+        [TestCase(10, new int[] { 2, 4, 6, 8 })]
+        public void FindSumChetMoreThenSumNechetTest(int n, int[] expected)
         {
-            int actual = _hw3.FindSumChetMoreThenSumNechet(n);
+            int[] actual = _hw3.FindSumChetMoreThenSumNechet(n);
             Assert.AreEqual(expected, actual);
         }
         [TestCase(2, 12, "yes")]

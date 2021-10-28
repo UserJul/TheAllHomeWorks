@@ -7,7 +7,7 @@ namespace HomeWork5
         public void SolveTask1()
         {
             int[,] doubleArray = CreatedoubleArray();
-            int minElement = SearchesForTheMinElementOfAnArray(doubleArray);
+            int minElement = FindForTheMinElement(doubleArray);
             Console.WriteLine();
             Console.WriteLine(minElement);
 
@@ -15,24 +15,24 @@ namespace HomeWork5
         public void SolveTask2()
         {
             int[,] doubleArray = CreatedoubleArray();
-            int maxElement = SearchesForTheMaxElementOfAnArray(doubleArray);
+            int maxElement = FindForTheMaxElement(doubleArray);
             Console.WriteLine();
             Console.WriteLine(maxElement);
         }
         public void SolveTask3()
         {
             int[,] doubleArray = CreatedoubleArray();
-            string minIndex = SearchesForTheMinIndexElementOfAnArray(doubleArray);
+            int[] minIndex = FindForTheMinIndexElement(doubleArray);
             Console.WriteLine();
-            Console.WriteLine(minIndex);
+            Console.WriteLine($"{minIndex[0]}, {minIndex[1]}");
 
         }
         public void SolveTask4()
         {
             int[,] doubleArray = CreatedoubleArray();
-            string maxIndex = SearchesForTheMaxIndexElementOfAnArray(doubleArray);
+            int[] maxIndex = FindForTheMaxIndexElement(doubleArray);
             Console.WriteLine();
-            Console.WriteLine(maxIndex);
+            Console.WriteLine($"{maxIndex[0]}, {maxIndex[1]}");
         }
 
         public void SolveTask5()
@@ -65,7 +65,7 @@ namespace HomeWork5
             }
             return doubleArray;
         }
-        public int SearchesForTheMinElementOfAnArray(int[,] array)
+        public int FindForTheMinElement(int[,] array)
         {
             int minElement = array[0, 0];
 
@@ -82,7 +82,7 @@ namespace HomeWork5
             return minElement;
 
         }
-        public int SearchesForTheMaxElementOfAnArray(int[,] array)
+        public int FindForTheMaxElement(int[,] array)
         {
             int maxElement = array[0, 0];
 
@@ -98,32 +98,34 @@ namespace HomeWork5
             }
             return maxElement;
         }
-        public string SearchesForTheMinIndexElementOfAnArray(int[,] array)
+        public int[] FindForTheMinIndexElement(int[,] array)
         {
-            int[] indexOfMinElemen = new int[2];
             int minElement = array[0, 0];
+            int indexI = 0;
+            int indexJ = 0;
 
             for (int i = 0; i < array.GetLength(0); i++)
             {
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
-                    if (minElement < array[i, j])
+                    if (minElement > array[i, j])
                     {
                         minElement = array[i, j];
-                        indexOfMinElemen[0] = i;
-                        indexOfMinElemen[1] = j;
+                        indexI = i;
+                        indexJ = j;
                     }
                 }
             }
-            string result = " ";
-            result = $"{indexOfMinElemen[0]}, {indexOfMinElemen[1]}";
+            int[] result = new int[2] { indexI, indexJ };
+
             return result;
         }
 
-        public string SearchesForTheMaxIndexElementOfAnArray(int[,] array)
+        public int[] FindForTheMaxIndexElement(int[,] array)
         {
-            int[] indexOfMaxElemen = new int[2];
             int maxElement = array[0, 0];
+            int indexI = 0;
+            int indexJ = 0;
 
             for (int i = 0; i < array.GetLength(0); i++)
             {
@@ -132,14 +134,13 @@ namespace HomeWork5
                     if (maxElement < array[i, j])
                     {
                         maxElement = array[i, j];
-                        indexOfMaxElemen[0] = i;
-                        indexOfMaxElemen[1] = j;
+                        indexI = i;
+                        indexJ= j;
                     }
                 }
             }
-            string result = " ";
-            result = $"{indexOfMaxElemen[0]}, {indexOfMaxElemen[1]}";
-            return result;
+            int[] tmpArray = new int[2] { indexI, indexJ };
+            return tmpArray;
         }
         public int FindsTheNumberOfElementsMoreThanItsNeighbors(int[,] array)
         {
@@ -197,6 +198,30 @@ namespace HomeWork5
             Console.WriteLine(messag);
             int number = Convert.ToInt32(Console.ReadLine());
             return number;
+        }
+        public int[,] GetMock(int number)
+        {
+            int[,] result = new int[0, 0];
+            switch(number)
+            {
+                case 1:
+                    result = new int[,]
+                    {
+                        { 1, 2, 3},
+                        {4, 5, 6},
+                        {7, 8, 9}
+                    };
+                    break;
+                case 2:
+                    result = new int[,]
+                    {
+                        {1, 4, 7 },
+                        {2, 5, 8 },
+                        {3, 6, 9 }
+                    };
+                    break;
+            }
+            return result;
         }
     }
 }
